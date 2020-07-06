@@ -32,7 +32,7 @@ class User {
             $content = htmlspecialchars($row['LEFT(`content`, 100)']);
             $add_time = $row['add_time'];
             if (!$row['share'] == NULL) {
-                $share = '<span style="color:red">SHARE</span>';
+                $share = '<span style="color:red">SHARED</span>';
             }else {
                 $share = NULL;
             }
