@@ -24,7 +24,7 @@ function mduiMenu() {
     <div class="mdui-drawer" id="main-drawer">
         <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
         
-            <div class="mdui-collapse-item ">
+            <div class="mdui-collapse-item mdui-collapse-item-open">
                 <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
                     <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">near_me</i>
                     <div class="mdui-list-item-content">菜单</div>
