@@ -23,10 +23,17 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
 --
 -- 表的结构 `notes`
 --
+
+CREATE TABLE `notes` (
+  `id` int(20) NOT NULL,
+  `title` text NOT NULL,
+  `content` longtext NOT NULL,
+  `add_time` datetime NOT NULL,
+  `share` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `notes`
