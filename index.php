@@ -27,7 +27,7 @@ $user->db_con = $db_con;
     </style>
 </head>
     <?php mduiBody(); mduiHeader('记事本') ; mduiMenu(); ?>
-    <ul class="mdui-list">
+    <ul class="mdui-list mdui-m-b-3">
         <?php
             $user->listNote();
         ?>

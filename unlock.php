@@ -2,6 +2,7 @@
 session_start();
 if (isset($_SESSION['user'])) {
     header('Location: index.php');
+    exit;
 }
 require_once('config/config.php');
 require_once('config/theme.php');

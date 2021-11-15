@@ -1,0 +1,48 @@
+.texto {
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#menu .mdui-list-item,
+.mdui-collapse-item-header {
+  border-radius: 0px 50px 50px 0px;
+}
+
+#categorys .mdui-list-item,
+.mdui-collapse-item-header {
+  border-radius: 0px 50px 50px 0px;
+}
+
+ul .mdui-list-item {
+  border-radius: 10px;
+}
+
+.mdui-dialog {
+  border-radius: 7px;
+}
+
+.mdui-btn {
+  border-radius: 5px;
+}
+
+.mdui-appbar {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+}
+
+#menu .mdui-list-item-content {
+  font-size: unset;
+}
+
+#categorys .mdui-list-item-content {
+  font-size: unset;
+}
+
+.mdui-list-item-active {
+  color: rgb(27, 116, 232);
+}
+
+.mdui-list-item-active * {
+  color: rgb(27, 116, 232);
+}

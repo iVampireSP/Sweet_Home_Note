@@ -24,11 +24,10 @@ if (!empty($_REQUEST['action'])) {
     if (!isset($_SESSION['user'])) {
         echo '您没有权限。';
         return '*';
-    }else {
+    } else {
         echo $user->shareNote();
         return '*';
     }
-    
 }
 ?>
 <!DOCTYPE html>
@@ -42,11 +41,21 @@ if (!empty($_REQUEST['action'])) {
         }
     </style>
 </head>
-    <?php mduiBody(); mduiHeader('浏览：' . $user->getTitle()); mduiMenu(); ?>
-    <script src="ajax.js"></script>
-    <h1 class="mdui-text-color-theme" style="text-align: center"><?php echo $user->getTitle();?></h1>
-    <pre style="font-family: Arial, Helvetica, sans-serif; white-space: pre-wrap; word-wrap: break-word; font-size: 16px"><?php echo $user->viewNote(); ?></pre>
-    <button class="mdui-fab mdui-fab-fixed mdui-color-theme-accent mdui-ripple" onclick="sharenote(<?php echo $_REQUEST['noteid']; ?>)" ><i class="mdui-icon material-icons">share</i></button>
+<?php mduiBody();
+mduiHeader('浏览：' . $user->getTitle());
+mduiMenu(); ?>
+<script src="ajax.js"></script>
+<div class="mdui-typo-display-1 mdui-m-t-2 mdui-text-center"><?php echo $user->getTitle(); ?></div>
+<div id="markdown-view">
+    <textarea style="display:none;"><?php echo $user->viewNote(); ?></textarea>
+</div>
+<button class="mdui-fab mdui-fab-fixed mdui-color-theme-accent mdui-ripple" onclick="sharenote(<?php echo $_REQUEST['noteid']; ?>)"><i class="mdui-icon material-icons">share</i></button>
+<script type="text/javascript">
+    $(function() {
+        var View = editormd.markdownToHTML("markdown-view", {});
+    });
+</script>
+<div class="mdui-m-b-3"></div>
 </body>
 
 </html>

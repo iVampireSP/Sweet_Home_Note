@@ -18,25 +18,49 @@ $user->db_con = $db_con;
 <head>
     <?php mduiHead('新增记事本'); ?>
 </head>
-    <?php mduiBody(); mduiHeader('新增记事本') ; mduiMenu(); ?>
-    <form name="addnote" method="post" action="addnote.php">
-        <div class="mdui-textfield mdui-textfield-floating-label">
-            <label class="mdui-textfield-label">标题</label>
-            <input class="mdui-textfield-input" type="text" name="title" autocomplete="off" autofocus required />
+<?php mduiBody();
+mduiHeader('新增记事本');
+mduiMenu(); ?>
+<form name="addnote" method="post" action="addnote.php">
+    <div class="mdui-textfield mdui-textfield-floating-label">
+        <label class="mdui-textfield-label">标题</label>
+        <input class="mdui-textfield-input" type="text" name="title" autocomplete="off" autofocus required />
+    </div>
+    <div class="mdui-textfield">
+        <label class="mdui-textfield-label">内容</label>
+        <div id="editor">
+            <textarea name="content" id="content" style="display:none;">
+## 美好的一天从记录开始。</textarea>
         </div>
-        <div class="mdui-textfield">
-            <textarea class="mdui-textfield-input" rows="10" placeholder="请输入记事本内容" name="content" autocomplete="off"></textarea>
-        </div>
-        <div class="mdui-col">
-            <button type="submit" class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple">新增记事本</button>
-        </div>
-    </form>
-    <?php
-        if (!empty($_REQUEST['title'])||!empty($_REQUEST['content'])) {
-            $user->addNote($_REQUEST['title'], $_REQUEST['content']);
-            echo '<script>window.location.replace("index.php");</script>';
-        }
-    ?>
+    </div>
+    <div class="mdui-col mdui-m-b-5">
+        <button type="submit" class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple">新增记事本</button>
+    </div>
+</form>
+<script src="https://cdn.bootcdn.net/ajax/libs/editor-md/1.5.0/editormd.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var editor = editormd("editor", {
+            width: "100%",
+            height: 750,
+            markdown: "",
+            emoji: true,
+            path: '/editor.md/lib/',
+            //dialogLockScreen : false,   // 设置弹出层对话框不锁屏，全局通用，默认为 true
+            //dialogShowMask : false,     // 设置弹出层对话框显示透明遮罩层，全局通用，默认为 true
+            //dialogDraggable : false,    // 设置弹出层对话框不可拖动，全局通用，默认为 true
+            //dialogMaskOpacity : 0.4,    // 设置透明遮罩层的透明度，全局通用，默认值为 0.1
+            //dialogMaskBgColor : "#000", // 设置透明遮罩层的背景颜色，全局通用，默认为 #fff
+            imageUpload: false,
+        });
+    });
+</script>
+<?php
+if (!empty($_REQUEST['title']) || !empty($_REQUEST['content'])) {
+    $user->addNote($_REQUEST['title'], $_REQUEST['content']);
+    echo '<script>window.location.replace("index.php");</script>';
+}
+?>
 </body>
 
 </html>
