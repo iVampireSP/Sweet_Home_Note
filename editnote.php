@@ -47,14 +47,8 @@ mduiMenu(); ?>
         var editor = editormd("editor", {
             width: "100%",
             height: 750,
-            markdown: "",
             emoji: true,
-            path: '/editor.md/lib/',
-            //dialogLockScreen : false,   // 设置弹出层对话框不锁屏，全局通用，默认为 true
-            //dialogShowMask : false,     // 设置弹出层对话框显示透明遮罩层，全局通用，默认为 true
-            //dialogDraggable : false,    // 设置弹出层对话框不可拖动，全局通用，默认为 true
-            //dialogMaskOpacity : 0.4,    // 设置透明遮罩层的透明度，全局通用，默认值为 0.1
-            //dialogMaskBgColor : "#000", // 设置透明遮罩层的背景颜色，全局通用，默认为 #fff
+            path: 'editor.md/lib/',
             imageUpload: false,
         });
     });
