@@ -56,7 +56,7 @@ mduiMenu(); ?>
 <?php
 if (!empty($_POST['title']) || !empty($_POST['content'])) {
     $user->editNote($_POST['title'], $_POST['content']);
-    echo '<script>window.location.replace("index.php");</script>';
+    echo '<script>window.location.replace("note.php?noteid=' . $user->noteid . '");</script>';
 }
 ?>
 </body>
