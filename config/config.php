@@ -14,6 +14,10 @@ if ($db_con->connect_error) {
 }
 
 /* 站点配置 */
+// 目录，如果部署到了二级目录，请修改下面地址，前面要加"/"，结尾不能加"/"。
+// 比如部署到sub目录，则填写"/sub"
+define('PATH', '');
+
 // 名称
 define('SITENAME', 'iVampireSP Sweet Home');
 

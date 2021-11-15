@@ -4,11 +4,11 @@ function mduiHeader($subtitle)
     $sitename = SITENAME;
     echo <<<EOF
     <header class="mdui-appbar mdui-appbar-fixed">
-    <div class="mdui-toolbar mdui-color-theme" style="background-color:white">
-        <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
+    <div class="mdui-toolbar mdui-color-theme">
+        <span style="border-radius: 100%" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
             mdui-drawer="{target: '#main-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
-        <a href="/index.php" class="mdui-typo-headline mdui-hidden-xs">$sitename</a>
-        <a href="." class="mdui-typo-title">$subtitle</a>
+        <a href="index.php" class="mdui-typo-headline mdui-hidden-xs">$sitename</a>
+        <a href="#" class="mdui-typo-title">$subtitle</a>
     </div>
 </header>
 EOF;
@@ -58,6 +58,7 @@ EOF;
 function mduiHead($title)
 {
     $sitename = SITENAME;
+    $path = PATH;
     echo <<<EOF
     <title>$sitename - $title</title>
     <meta charset="utf-8" />
@@ -77,18 +78,18 @@ function mduiHead($title)
     <link rel="icon" href="https://ivampiresp.com/wp-content/uploads/2020/02/cropped-illust_78879291_20200207_181713-32x32.jpg" sizes="32x32" />
     <link rel="icon" href="https://ivampiresp.com/wp-content/uploads/2020/02/cropped-illust_78879291_20200207_181713-192x192.jpg" sizes="192x192" />
     <link rel="apple-touch-icon" href="https://ivampiresp.com/wp-content/uploads/2020/02/cropped-illust_78879291_20200207_181713-180x180.jpg" />
-    <link rel="stylesheet" href="/editor.md/css/editormd.preview.min.css" />
-    <link rel="stylesheet" href="/editor.md/css/editormd.min.css" />
+    <link rel="stylesheet" href="{$path}/editor.md/css/editormd.preview.min.css" />
+    <link rel="stylesheet" href="{$path}/editor.md/css/editormd.min.css" />
     <style type="text/css">
     .link {
         color: blue;
         text-decoration:none
     }
     </style>
-    <link rel="stylesheet" href="/style.css" type="text/css" />
-    <script src="/editor.md/editormd.js"></script>
-    <script src="/editor.md/lib/marked.min.js"></script>
-    <script src="/editor.md/lib/prettify.min.js"></script>
+    <link rel="stylesheet" href="{$path}/style.css" type="text/css" />
+    <script src="{$path}/editor.md/editormd.js"></script>
+    <script src="{$path}/editor.md/lib/marked.min.js"></script>
+    <script src="{$path}/editor.md/lib/prettify.min.js"></script>
 EOF;
 }
 function mduiBody()
