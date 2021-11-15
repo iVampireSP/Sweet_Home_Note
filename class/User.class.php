@@ -12,7 +12,7 @@ class User
     {
         $this->password = md5($password);
         if ($this->password == PASSWORD) {
-            echo '<script>window.location = "/index.php"</script>';
+            echo '<script>window.location = "index.php"</script>';
             $_SESSION['user'] = 1;
         }
     }

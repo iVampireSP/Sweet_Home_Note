@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['user'])) {
-    echo '<script>window.location = "/index.php"</script>';
+    echo '<script>window.location = "index.php"</script>';
 }
 require_once('config/config.php');
 require_once('config/theme.php');
