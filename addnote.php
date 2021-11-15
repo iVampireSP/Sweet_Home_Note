@@ -24,7 +24,7 @@ mduiMenu(); ?>
 <form name="addnote" method="post" action="addnote.php">
     <div class="mdui-textfield mdui-textfield-floating-label">
         <label class="mdui-textfield-label">标题</label>
-        <input class="mdui-textfield-input" type="text" name="title" autocomplete="off" autofocus required />
+        <input class="mdui-textfield-input" type="text" name="title" value="<?php echo date('Y-m-d H:i:s') ?>" autocomplete="off"  required />
     </div>
     <div class="mdui-textfield">
         <label class="mdui-textfield-label">内容</label>
