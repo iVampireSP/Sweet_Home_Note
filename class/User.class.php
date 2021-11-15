@@ -27,6 +27,7 @@ class User
     // 方法：列出所有记事本
     public function listNote()
     {
+        $path = PATH;
         // 为了数据库和浏览器性能，需要截取从数据库中的字符串。
         $sql = "SELECT `id`, `title`, `add_time`, LEFT(`content`, 100), `share` FROM `notes` ORDER BY `notes`.`add_time` DESC";
         $result = $this->db_con->query($sql);
@@ -41,7 +42,7 @@ class User
                 $share = NULL;
             }
             echo <<<START
-            <a href="note.php?noteid=$noteid">
+            <a href="{$path}/note.php?noteid=$noteid">
                 <li class="mdui-list-item mdui-ripple">
                     <div class="mdui-list-item-content">
                         <div class="mdui-list-item-title mdui-list-item-one-line texto"><span class="mdui-text-color-theme">$title</span><span style="color: gray;position: absolute; right: 15px">$share $add_time</span></div>
